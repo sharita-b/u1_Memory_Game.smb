@@ -9,6 +9,8 @@ body {
     background: radial-gradient(white, grey)
 }
 h1 {
+    text-align: center;
+    font-size: 75px;
     color: red;
 }
 /*Flex display containers: */
@@ -17,11 +19,13 @@ h1 {
     grid-template-columns: repeat(4, auto);
     grid-gap: 10px;
     justify-content: center;
-    margin-bottom: 10%;
+    margin: 50px 0 50px 0;
 }
 
 .gameStatusContainer {
     grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
 }
 
 .gameCard {
@@ -29,4 +33,10 @@ h1 {
     border: 3px solid white;
     height: 175px;
     width: 125px;
+    border-radius: 5%;
+}
+.themePicture {
+    background: rgb(180, 143, 143);
+    grid-column: 1 /-1;
+    height: 200px;
 }
