@@ -29,12 +29,17 @@ h1 {
 }
 
 .gameCard {
-    background: black;
+    /* background: black; */
+    display: flex;
     border: 3px solid white;
     height: 175px;
     width: 125px;
     border-radius: 5%;
 }
+img {
+    align-items: stretch;
+}
+
 .themePicture {
     background: rgb(180, 143, 143);
     grid-column: 1 /-1;
