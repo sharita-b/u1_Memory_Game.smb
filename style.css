@@ -1,4 +1,10 @@
 /* Whole Page styling */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 html {
     min-height: 100vh;
 }
@@ -30,18 +36,26 @@ h1 {
 
 .gameCard {
     /* background: black; */
+    position: relative;
     display: flex;
     border: 3px solid white;
     height: 175px;
     width: 125px;
     border-radius: 5%;
 }
+.gameCard.flip {
+    transform: rotateY(180deg);
+}
 
 .cardBack {
     margin: 5px auto;
+    background-color: white;
+    position: absolute;
 }
 .cardFront {
     margin: 5px auto;
+    background-color: red;
+    position: absolute;
 }
 
 .themePicture {

@@ -1,19 +1,19 @@
 //<-- User Interactive Game Introduction -->>//
 
-let playerName = prompt("Enter your name, and we'll start matching world continents");
-let displayTitle = document.querySelector(`.mgTitle`)
-    displayTitle.innerText = `${playerName}'s Continent Match Challenge`
-let playerMatch = document.querySelector(`.playerMatch`)
-    playerMatch.innerText = `${playerName}'s Match total`
+// let playerName = prompt("Enter your name, and we'll start matching world continents");
+// let displayTitle = document.querySelector(`.mgTitle`)
+//     displayTitle.innerText = `${playerName}'s Continent Match Challenge`
+// let playerMatch = document.querySelector(`.playerMatch`)
+//     playerMatch.innerText = `${playerName}'s Match total`
 
 //<-- Global Variables -->>//
 
  //All the cards on the board > class `.gameCards`
-let gameCards = document.getElementsByClassName(`.gameCard`);
+let gameCards = document.querySelectorAll(`.gameCard`);
 //All cards with find_Cardback img > class `.cardBack`
-let cardBack = document.getElementsByClassName(`.cardBack`);
+let cardBack = document.querySelector(`.cardBack`);
 //All cards with a continent img > class `.cardFront`
-let cardFront = document.getElementsByClassName(`.cardFront`);
+let cardFront = document.querySelector(`.cardFront`);
 //-----WINNING PAIRS----//
 //two cards with africa img > class `.cardFront` and id `#c0 , #c14`
 let africaPair = document.getElementById(`#c0, #c14`);
@@ -35,6 +35,8 @@ let compassPair = document.getElementById(`#c4 , #c12`);
 
 //<-- Game Functions -->>//
 
+
+// Game start state = cardFront hidden
 // 1) change the picture on the card from, cardBack to cardFront when player 'clicks'
 //-- toggle back and forth with clicks (event listener)
 
@@ -43,6 +45,8 @@ let compassPair = document.getElementById(`#c4 , #c12`);
 // 3) if 'playerChoice' is truthy with any of the winning pairs, alert(`${playerName}! You have a matching pair) else  -- flip both cards to cardBack (toggle function)
 // 4 create a variable that stores the match pairs, and returns the number to id (`#displayMatch`)
 // 5 create a timer that counts down from 100 when the user answers the name prompt (line 3)
+
+
 
 // Array of Cards???
 // let gameCards = document.querySelectorAll(`.gameCard`)
@@ -58,7 +62,26 @@ let compassPair = document.getElementById(`#c4 , #c12`);
 
 //<-- Event Listeners -->>//
 
-gameCards.addEventListener(`click`, () => {
-    document.body.classList.remove(`cardBack`);
-    document.body.classList.toggle(`cardFront`);
-});
+// const flipCard = () => {
+//     gameCards.classList.toggle(`.cardfront`)
+// }
+// gameCards.addEventListener(`click`, flipCard)
+
+// function flipCard () {
+//     this.classList.toggle (`flip`);
+// }
+// gameCards.forEach(card => card.addEventListener(`click`, flipCard))
+
+function removeBack (){
+    document.getElementById("c0").removeAttribute("width")
+}
+gameCards.forEach(card => card.addEventListener("click", removeBack))
+// gameCards.addEventListener(`click`, () => {
+//     gameCards.classList.toggle(`.cardfront`)
+// });
+
+// gameCards.addEventListener(`click`, () => {
+//     document.body.classList.remove(`cardBack`);
+//     document.body.classList.toggle(`cardFront`);
+// });
+
