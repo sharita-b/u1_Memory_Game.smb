@@ -4,13 +4,12 @@
     margin: 0;
     box-sizing: border-box;
 }
-
 html {
     min-height: 100vh;
 }
 
-
 body {
+    
     margin: 0;
     background: radial-gradient(white, grey)
 }
@@ -26,6 +25,7 @@ h1 {
     grid-gap: 10px;
     justify-content: center;
     margin: 50px 0 50px 0;
+    perspective: 1000px;
 }
 
 .gameStatusContainer {
@@ -35,28 +35,40 @@ h1 {
 }
 
 .gameCard {
-    /* background: black; */
+    background: white;
     position: relative;
     display: flex;
     border: 3px solid white;
     height: 175px;
     width: 125px;
     border-radius: 5%;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
 }
+.gameCard:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+
 .gameCard.flip {
     transform: rotateY(180deg);
 }
 
-.cardBack {
+.card_Back {
     margin: 5px auto;
-    background-color: white;
+    /* background-color: white; */
     position: absolute;
+    backface-visibility: hidden;
 }
-.cardFront {
+.card_Front {
     margin: 5px auto;
-    background-color: red;
+    /* background-color: white; */
     position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
 }
+
 
 .themePicture {
     background: rgb(180, 143, 143);
