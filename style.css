@@ -11,7 +11,7 @@ html {
 body {
     
     margin: 0;
-    background: radial-gradient(white, grey)
+    background: radial-gradient(white, rgb(66, 66, 66))
 }
 h1 {
     text-align: center;
@@ -38,10 +38,11 @@ h1 {
     background: white;
     position: relative;
     display: flex;
-    border: 3px solid white;
+    border: 3px solid black;
     height: 175px;
     width: 125px;
     border-radius: 5%;
+    justify-content: center;
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform .5s;
@@ -60,13 +61,14 @@ h1 {
     /* background-color: white; */
     position: absolute;
     backface-visibility: hidden;
+    transform: rotateY(180deg);
 }
 .card_Front {
     margin: 5px auto;
     /* background-color: white; */
     position: absolute;
     backface-visibility: hidden;
-    transform: rotateY(180deg);
+    /* transform: rotateY(180deg); */
 }
 
 
