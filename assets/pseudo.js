@@ -27,4 +27,55 @@ let displayTitle = document.querySelector(".mgTitle").innerHTML(`${playerName}'s
 
 
 
+//Optional Array of obj cards with pictures
+const cardArray = [
+    {name: `africa`,
+    img: `assets/Africa-Green.png`
+    },
+    {name: `africa`,
+    img: `assets/Africa-Green.png`
+    },
+    {name: `antarctica`,
+    img: `assets/Antarctica.png`
+    },
+    {name: `antarctica`,
+    img: `assets/Antarctica.png`
+    },
+    {name: `australia`,
+    img: `australia png`
+    },
+    {name: `australia`,
+    img: `australia png`
+    },
+    {name: `asia`,
+    img: `assets/Asia-Burgandy.png`
+    },
+    {name: `asia`,
+    img: `assets/Asia-Burgandy.png`
+    },
+    {name: `europe`,
+    img: `assets/Europe-Navy.png`
+    },
+    {name: `europe`,
+    img: `assets/Europe-Navy.png`
+    },
+    {name: `n.America`,
+    img: `N.America png`
+    },
+    {name: `n.America`,
+    img: `N.America png`
+    },
+    {name: `s.America`,
+    img: `assets/South-America-Black.png`
+    },
+    {name: `s.America`,
+    img: `assets/South-America-Black.png`
+    },
+    {name: `compass`,
+    img: `assets/Compass.png`
+    },
+    {name: `compass`,
+    img: `assets/Compass.png`
+    },
 
+]

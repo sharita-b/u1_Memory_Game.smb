@@ -7,63 +7,18 @@
 // let playerMatch = document.querySelector(`.playerMatch`)
 //     playerMatch.innerText = `${playerName}'s Match total`
 
-let gameCards = document.querySelectorAll(`.gameCard`)
-let cardsInPlay = () => {
-    for (i=0; i<gameCards.length; i++){
-        console.log(gameCards[i])
-    }
+// let gameCards = document.querySelectorAll(`.gameCard`)
+// let cardsInPlay = () => {
+//     for (i=0; i<gameCards.length; i++){
+//         let card = document.create(`img`)
+//         card.setAttribute(`src`, `assets/`)
+//         //console.log(gameCards[i])
+//     }
+// }
+// cardsInPlay()
+
+//---Flip Function Elements---//
+const cardFront = () => {
+    document.querySelector(`.cardFront`).style.dislplay =`none`
 }
-cardsInPlay()
-
-
-const cardArray = [
-    {name: `africa`,
-    img: `africa png`
-    },
-    {name: `africa`,
-    img: `africa png`
-    },
-    {name: `antarctica`,
-    img: `antarctica png`
-    },
-    {name: `antarctica`,
-    img: `antarctica png`
-    },
-    {name: `australia`,
-    img: `australia png`
-    },
-    {name: `australia`,
-    img: `australia png`
-    },
-    {name: `asia`,
-    img: `asia png`
-    },
-    {name: `asia`,
-    img: `asia png`
-    },
-    {name: `europe`,
-    img: `europe png`
-    },
-    {name: `europe`,
-    img: `europe png`
-    },
-    {name: `N.America`,
-    img: `N.America png`
-    },
-    {name: `N.America`,
-    img: `N.America png`
-    },
-    {name: `S.America`,
-    img: `S.America png`
-    },
-    {name: `S.America`,
-    img: `S.America png`
-    },
-    {name: `compass`,
-    img: `compass png`
-    },
-    {name: `compass`,
-    img: `compass png`
-    },
-
-]
+cardFront()
