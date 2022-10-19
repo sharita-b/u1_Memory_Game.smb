@@ -10,36 +10,35 @@ let playerMatch = document.querySelector(`.playerMatch`)
 const gameCards = document.querySelectorAll(`.gameCard`);
 let card_Front = document.querySelector(`.card_Front`);
 let card_Back = document.querySelector(`.card_Back`);
+const displayTime = document.querySelector(`#displayTime`);
 
-//-----WINNING PAIRS----//
-// let africaPair = document.getElementById(`#c0, #c14`);
-// let nAmericaPair = document.getElementById(`#c5 , #c11`);
-// let australiaPair = document.getElementById(`#c7 , #c9`);
-// let sAmericaPair = document.getElementById(`#c3 , #c15`);
-// let asiaPair = document.getElementById(`#c13 , #c8`);
-// let europePair = document.getElementById(`#c1 , #c2`);
-// let antarcticaPair = document.getElementById(`#c6 , #c10`)
-// let compassPair = document.getElementById(`#c4 , #c12`);
-//<-- Game Functions -->>//
+
+let time = 100;
+setInterval(gameTimeLeft, 1000);
+function gameTimeLeft () {
+displayTime.innerHTML = `${time}`; time--;
+}
+gameTimeLeft()
+
 
 let hasFlippedCard = false;
 let firstCard, secondCard;
 
 function flipCard () {
     this.classList.add(`flip`);
-
+//Empty first & second Card variables allowed the flipCard funtion below. **Learning** use of truthy manipulation in the if/else statement is what made this possible** -> Help from TA T.P.
     if (!hasFlippedCard){
         hasFlippedCard = true;
         firstCard = this;
         return;
     }
-
     secondCard = this;
     hasFlippedCard = false;
 
     checkForMatch();
 }
 
+//dataset assignment of eachpair instead of an #id allowed the checkForMath function to be condensed -> Help from instructor J.T. 
 function checkForMatch (){
     if(firstCard.dataset.framework === secondCard.dataset.framework){
         //I would like to the card to flip, and then alert
@@ -56,7 +55,7 @@ function disableCards () {
     firstCard.removeEventListener(`click`, flipCard);
     secondCard.removeEventListener(`click`, flipCard);
 }
-
+//Researched delay: "how to set time delay in JavaScript" -StackOverflow//
 function unFlipCards () {
     setTimeout (() => {
         firstCard.classList.remove(`flip`);
