@@ -32,6 +32,8 @@ let hasFlippedCard = false;
 let firstCard, secondCard;
 
 function flipCard () {
+    if (this === firstCard) return;
+    
     this.classList.add(`flip`);
     if (!hasFlippedCard){
         hasFlippedCard = true;
@@ -48,8 +50,8 @@ function flipCard () {
 function checkForMatch (){
     if(firstCard.dataset.framework === secondCard.dataset.framework){
         //I would like to the card to flip, and then alert
-        alert(`${playerName}, you have a match!`)
         disableCards();
+        alert(`${playerName}, you have a match!`);
         return;
     } else {
         alert(`Nope! Sorry ${playerName}, try again.`)
