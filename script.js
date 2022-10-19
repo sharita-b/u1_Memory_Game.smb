@@ -14,13 +14,14 @@ const displayTime = document.querySelector(`#displayTime`);
 const displayMatch = document.querySelector(`#displayMatch`)
 
 //Simple Game Timer to Start// -- would like to add response
-let time = 100;
+let time = 10;
 setInterval(gameTimeLeft, 1000);
 function gameTimeLeft () {
+  //  let timeLeft = Math.abs(time);
     displayTime.innerHTML = `${time}`; 
-    time--;
-    if (time === 0){
-       //call the reset function// 
+    time--;  //<-- i need the timer to stop at 0
+    if (time < 1){
+       gameCards.classList.remove(`flip`);
     }
 
 }
@@ -71,19 +72,28 @@ function unFlipCards () {
     }, 1000);
 }
 
+function gameReset () {
+    // if (time === 0){
+    //   gameCards.classList.remove(`flip`);
+    hasFlippedCard = false;
+    [firstCard, secondCard] = [null, null];
+    }
+    
+gameReset()
+
 gameCards.forEach(card => card.addEventListener(`click`, flipCard))
 
 //This scope should be bigger, to include all game functions. I think
-function gameReset () {
-    if (time === 0){
-      gameCards.classList.remove(`flip`);
-      //reset match total//
-    } else if (displayMatch === 8){
-      gameCards.classList.remove(`flip`);
-      alert(`${playerName}, you WIN!`);
-      //additional graphic celebration would be nice
-    }
-  }
+// function gameReset () {
+//     if (time === 0){
+//       gameCards.classList.remove(`flip`);
+//       //reset match total//
+//     } else if (displayMatch === 8){
+//       gameCards.classList.remove(`flip`);
+//       alert(`${playerName}, you WIN!`);
+//       //additional graphic celebration would be nice
+//     }
+//   }
 
 
 
